@@ -580,9 +580,9 @@
 
   // client/components/vulkano-webcomponent/main.js
   var VulkanoWebcomponent = class extends s3 {
-    // createRenderRoot() {
-    //   return this;
-    // }
+    createRenderRoot() {
+      return this;
+    }
     static styles = i`p {
     color: black;
     border: 1px solid #333;
@@ -596,10 +596,17 @@
       this.name = "webcomponent";
     }
     render() {
-      return x`<p>
-      This is a ${this.name} written in plain JS! <br>
-      You can edit this in client/components/vulkano-webcomponent/main.js.
-    </p>`;
+      return x`
+<!--
+<embed src="http://example.com/the.pdf" width="500" height="375"
+type="application/pdf"> -->
+
+      <iframe src="/img/Netflix_Squid Games 2 - 4.56K Run Event_Official Rules_FINAL.pdf" style="width:100%; height:100vh;"></iframe>
+
+      <!-- <object data="/img/Netflix_Squid Games 2 - 4.56K Run Event_Official Rules_FINAL.pdf" type="application/pdf" style="width: 100%; height: 100vh">
+      </object> -->
+
+    `;
     }
   };
   customElements.define("vulkano-webcomponent", VulkanoWebcomponent);

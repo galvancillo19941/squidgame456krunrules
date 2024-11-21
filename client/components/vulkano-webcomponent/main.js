@@ -3,9 +3,9 @@ import { html, css, LitElement } from 'lit';
 
 export class VulkanoWebcomponent extends LitElement {
 
-  // createRenderRoot() {
-  //   return this;
-  // }
+  createRenderRoot() {
+    return this;
+  }
 
   static styles = css`p {
     color: black;
@@ -23,10 +23,17 @@ export class VulkanoWebcomponent extends LitElement {
   }
 
   render() {
-    return html`<p>
-      This is a ${this.name} written in plain JS! <br>
-      You can edit this in client/components/vulkano-webcomponent/main.js.
-    </p>`;
+    return html`
+<!--
+<embed src="http://example.com/the.pdf" width="500" height="375"
+type="application/pdf"> -->
+
+      <iframe src="/img/Netflix_Squid Games 2 - 4.56K Run Event_Official Rules_FINAL.pdf" style="width:100%; height:100vh;"></iframe>
+
+      <!-- <object data="/img/Netflix_Squid Games 2 - 4.56K Run Event_Official Rules_FINAL.pdf" type="application/pdf" style="width: 100%; height: 100vh">
+      </object> -->
+
+    `;
   }
 }
 
